@@ -104,7 +104,7 @@ kbfsd_prestart()
 
 
 	# The Keybase client has to be initiated so that
-	# "/home/${kbfsd_user}/.config/keybase/keybased.sock" is present.
+	# "/var/run/user/$(id -u ${kbfsd_user})/keybase/keybased.sock" is present.
 	su -l "${kbfsd_user}" -c "%%LOCALBASE%%/bin/keybase login ${kbfsd_keybase_username}" > /dev/null 2>&1
 
 	local _keybased_sock="/var/run/user/$(id -u ${kbfsd_user})/keybase/keybased.sock"
