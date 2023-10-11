@@ -122,7 +122,6 @@ kbfsd_poststop()
 	umount "${kbfsd_mountpoint}" > /dev/null 2>&1
 }
 
-load_rc_config "${name}"
 run_rc_command "$1"
 
 # vim: filetype=sh softtabstop=8 shiftwidth=8 tabstop=8 noexpandtab
